@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Product from './Products';
+import Product from './Product';
 
 class Products extends Component {
     render() {
@@ -12,7 +12,6 @@ class Products extends Component {
                     <Product/>
                 </div>
             </section>
-
         )
     }
 }
