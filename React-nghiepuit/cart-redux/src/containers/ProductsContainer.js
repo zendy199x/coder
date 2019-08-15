@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Products from './../components/Products';
+import Product from './../components/Product';
 
 class ProductsContainer extends Component {
+
     render() {
         var { products } = this.props; //this.props.products
         return(
-            <Products products={ products }/>
+            <Product>
+                { this.showProducts(products) }
+            </Product>
         );
     }
+    
+    showProducts(products) {
+        var result = null;
+        if(products.length > 0) {
+            result = products.map((product, index) => {
+                return <Product key={index} product={product}/>
+            })
+        }
+        return result;
+    }
 }
+
 
 const mapStateToProps = state => {
     return {
@@ -17,4 +32,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(Products);
+export default connect(mapStateToProps, null)(ProductsContainer);
