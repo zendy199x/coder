@@ -1,2 +1,0 @@
-# React Udemy
-https://www.udemy.com/react-the-complete-guide-incl-redux/
